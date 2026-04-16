@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  myproject:
+    build: .
+    container_name: globalemailhub
+    env_file:
+      - backend/.env          # ← this loads your .env file
+      - frontend/.env
+    ports:
+      - "3005:3004"
+    restart: always
