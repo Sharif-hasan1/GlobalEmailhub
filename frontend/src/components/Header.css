@@ -32,6 +32,13 @@
 
 .logo-icon { display: flex; }
 
+.logo-img {
+  height: 44px;
+  width: auto;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
 .logo-text {
   font-size: 18px;
   font-weight: 800;
@@ -266,6 +273,7 @@
   .user-menu .btn { display: none; }
   .burger-btn { display: flex; }
   .mobile-menu { display: flex; }
+  .logo-img { height: 34px; }
 }
 
 @media (max-width: 480px) {

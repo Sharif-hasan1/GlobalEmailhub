@@ -28,13 +28,7 @@ export default function Header() {
       <div className="container header-inner">
         {/* Logo */}
         <Link to="/" className="logo" onClick={() => setMenuOpen(false)}>
-          <span className="logo-icon">
-            <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-              <rect width="28" height="28" rx="8" fill="#2563EB" />
-              <path d="M6 9.5L14 15.5L22 9.5" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-              <rect x="6" y="9" width="16" height="12" rx="2" stroke="white" strokeWidth="2" fill="none" />
-            </svg>
-          </span>
+          <img src="/logo.png" alt="GlobalEmailHub Logo" className="logo-img" />
           <span className="logo-text">GlobalEmail <span>Hub</span></span>
         </Link>
 
