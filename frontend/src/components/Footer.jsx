@@ -38,8 +38,8 @@ export default function Footer() {
           <div className="footer-col">
             <h4>Legal</h4>
             <Link to="/terms">Terms of Service</Link>
-            <Link to="/privacy">Privacy Policy</Link>
-            <Link to="/refund">Refund Policy</Link>
+            <Link to="/privacy-policy">Privacy Policy</Link>
+            <Link to="/refund-policy">Refund Policy</Link>
           </div>
         </div>
       </div>
@@ -49,8 +49,8 @@ export default function Footer() {
           <span>© {new Date().getFullYear()} GlobalEmail Hub. All rights reserved.</span>
           <div className="footer-bottom-links">
             <Link to="/terms">Terms</Link>
-            <Link to="/privacy">Privacy</Link>
-            <Link to="/refund">Refunds</Link>
+            <Link to="/privacy-policy">Privacy</Link>
+            <Link to="/refund-policy">Refunds</Link>
             <Link to="/support">Contact</Link>
           </div>
         </div>

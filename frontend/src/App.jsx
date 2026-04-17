@@ -14,6 +14,9 @@ import Orders from './pages/Orders';
 import Support from './pages/Support';
 import Checkout from './pages/Checkout';
 import AdminPanel from './pages/admin/AdminPanel';
+import Terms from './pages/Terms';
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import RefundPolicy from './pages/RefundPolicy';
 import './App.css';
 
 function App() {
@@ -34,6 +37,9 @@ function App() {
                 <Route path="/support" element={<Support />} />
                 <Route path="/checkout" element={<Checkout />} />
                 <Route path="/admin/*" element={<AdminPanel />} />
+                <Route path="/terms" element={<Terms />} />
+                <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+                <Route path="/refund-policy" element={<RefundPolicy />} />
               </Routes>
             </main>
             <Footer />
