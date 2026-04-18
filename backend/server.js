@@ -41,6 +41,11 @@ app.use('/api/products', require('./routes/products'));
 app.use('/api/orders', require('./routes/orders'));
 app.use('/api/admin', require('./routes/admin'));
 
+// 404 handler for unknown API routes
+app.all('/api/*', (req, res) => {
+  res.status(404).json({ msg: 'API endpoint not found' });
+});
+
 // Serve React frontend in production
 const buildPath = path.resolve(__dirname, '..', 'frontend', 'build');
 console.log('Build path:', buildPath);
@@ -67,6 +72,18 @@ if (fs.existsSync(buildPath)) {
 const PORT = process.env.PORT || 3004;
 app.listen(PORT,"0.0.0.0", () => console.log(`GlobalEmail Hub server running on port ${PORT}`));
 
+// Global Express error handler — prevents server crash on unhandled route errors
+app.use((err, req, res, _next) => {
+  console.error('Unhandled error:', err.stack || err);
+  res.status(500).json({ msg: 'Internal server error' });
+});
 
-
+// Process-level handlers — prevent silent crashes
+process.on('unhandledRejection', (reason) => {
+  console.error('Unhandled Promise Rejection:', reason);
+});
+process.on('uncaughtException', (err) => {
+  console.error('Uncaught Exception:', err);
+  process.exit(1);
+});
 

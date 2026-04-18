@@ -498,7 +498,7 @@ router.post('/orders/:id/import-emails', auth, requireRole('admin'), excelUpload
       totalRows: rows.length,
       importedRows: toInsert.length,
       errorRows: errors.length,
-      errors: errors.slice(0, 50)
+      importErrors: errors.slice(0, 50)
     });
 
     await logActivity(req, `Imported ${toInsert.length} emails for order #${order._id.toString().slice(-8)} — marked completed`, 'order', order._id.toString());

@@ -145,7 +145,6 @@ router.post('/github', async (req, res) => {
 
     const githubId = String(ghUser.data.id);
     const picture = ghUser.data.avatar_url || '';
-    const name = ghUser.data.name || ghUser.data.login;
 
     // Check if user exists by githubId or email
     let user = await User.findOne({ $or: [{ githubId }, { email: primaryEmail }] });
@@ -216,7 +215,7 @@ router.post('/google', async (req, res) => {
       return res.status(400).json({ msg: 'Token audience mismatch' });
     }
 
-    const { sub: googleId, email, name, picture } = payload;
+    const { sub: googleId, email, picture } = payload;
 
     let user = await User.findOne({ $or: [{ googleId }, { email }] });
 
@@ -262,7 +261,10 @@ router.post('/google', async (req, res) => {
       }
     });
   } catch (err) {
-    console.error('Google auth error:', err);
+    console.error('Google auth error:', err.response?.data || err.message || err);
+    if (err.response?.status >= 400 && err.response?.status < 500) {
+      return res.status(401).json({ msg: 'Invalid or expired Google token. Please try again.' });
+    }
     res.status(500).json({ msg: 'Google authentication failed' });
   }
 });

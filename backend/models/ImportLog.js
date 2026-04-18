@@ -8,7 +8,7 @@ const ImportLogSchema = new mongoose.Schema(
     totalRows: { type: Number, default: 0 },
     importedRows: { type: Number, default: 0 },
     errorRows: { type: Number, default: 0 },
-    errors: [{ type: String }]
+    importErrors: [{ type: String }]
   },
   { timestamps: true }
 );

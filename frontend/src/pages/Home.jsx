@@ -2,11 +2,9 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import ProductRow from '../components/ProductRow';
-import { useAuth } from '../context/AuthContext';
 import './Home.css';
 
 export default function Home() {
-  const { user } = useAuth();
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
 

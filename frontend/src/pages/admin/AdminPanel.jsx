@@ -689,6 +689,7 @@ export default function AdminPanel(){
     finally{if(orderImportRef.current) orderImportRef.current.value='';}
   };
 
+  // eslint-disable-next-line no-unused-vars
   const exportOrders=()=>{window.open(`/api/admin/orders/export?status=${orderFilter}`,'_blank');};
   const exportReport=()=>{window.open(`/api/admin/reports/export-csv?from=${reportRange.from}&to=${reportRange.to}`,'_blank');};
 

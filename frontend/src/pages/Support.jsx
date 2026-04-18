@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import './Support.css';
 
 const FAQS = [
@@ -149,9 +150,9 @@ export default function Support() {
             <div className="card quick-links-card">
               <h3>Quick Links</h3>
               <div className="quick-links">
-                <a href="#tos" className="quick-link">📄 Terms of Service</a>
-                <a href="#privacy" className="quick-link">🔒 Privacy Policy</a>
-                <a href="#refund" className="quick-link">💰 Refund Policy</a>
+                <Link to="/terms" className="quick-link">📄 Terms of Service</Link>
+                <Link to="/privacy-policy" className="quick-link">🔒 Privacy Policy</Link>
+                <Link to="/refund-policy" className="quick-link">💰 Refund Policy</Link>
               </div>
             </div>
           </section>

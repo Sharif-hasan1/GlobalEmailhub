@@ -18,7 +18,17 @@ export default function Products() {
     if (category && category !== 'All') params.category = category;
 
     axios.get('/api/products', { params })
-      .then(res => setProducts(res.data))
+      .then(res => {
+        const sorted = [...res.data].sort((a, b) => {
+          const stockA = a.stock ?? 0;
+          const stockB = b.stock ?? 0;
+          if (stockA === 0 && stockB === 0) return 0;
+          if (stockA === 0) return 1;
+          if (stockB === 0) return -1;
+          return stockB - stockA;
+        });
+        setProducts(sorted);
+      })
       .catch(() => {})
       .finally(() => setLoading(false));
   }, [search, category]);
