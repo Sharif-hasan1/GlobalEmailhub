@@ -14,7 +14,9 @@ const UserSchema = new mongoose.Schema(
     lastLoginIP: { type: String, default: '' },
     githubId: { type: String, default: null },
     googleId: { type: String, default: null },
-    picture: { type: String, default: '' }
+    picture: { type: String, default: '' },
+    resetPasswordToken: { type: String, default: null },
+    resetPasswordExpires: { type: Date, default: null }
   },
   { timestamps: true }
 );

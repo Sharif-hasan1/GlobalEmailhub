@@ -81,11 +81,11 @@ export default function Support() {
             <div className="card contact-info-card">
               <h3>📬 Direct Contact</h3>
               <div className="contact-info-list">
-                <a href="mailto:adminglobalemailhub@gmail.com" className="contact-info-item">
+                <a href="mailto:globalemailhub@gmail.com" className="contact-info-item">
                   <span className="contact-info-icon">📧</span>
                   <div>
                     <strong>Email</strong>
-                    <span>adminglobalemailhub@gmail.com</span>
+                    <span>globalemailhub@gmail.com</span>
                   </div>
                 </a>
                 <a href="tel:+8801733942373" className="contact-info-item">

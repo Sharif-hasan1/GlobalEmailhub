@@ -97,7 +97,7 @@ export default function PrivacyPolicy() {
           <li>Request deletion of your account and data</li>
           <li>Opt out of marketing communications</li>
         </ul>
-        <p>To exercise any of these rights, contact us at <a href="mailto:adminglobalemailhub@gmail.com">adminglobalemailhub@gmail.com</a>.</p>
+        <p>To exercise any of these rights, contact us at <a href="mailto:globalemailhub@gmail.com">globalemailhub@gmail.com</a>.</p>
       </div>
 
       <div className="legal-section" id="retention">
@@ -117,7 +117,7 @@ export default function PrivacyPolicy() {
 
       <div className="legal-contact-box">
         <h3>Privacy Contact</h3>
-        <p>📧 <a href="mailto:adminglobalemailhub@gmail.com">adminglobalemailhub@gmail.com</a></p>
+        <p>📧 <a href="mailto:globalemailhub@gmail.com">globalemailhub@gmail.com</a></p>
         <p>💬 <a href="https://t.me/sharifhasaan" target="_blank" rel="noopener noreferrer">Telegram: @sharifhasaan</a></p>
         <p>📞 <a href="tel:+8801733942373">+8801733942373</a></p>
         <p style={{ marginTop: 12 }}>Also see: <Link to="/terms" style={{ color: '#60a5fa' }}>Terms of Service</Link> · <Link to="/refund-policy" style={{ color: '#60a5fa' }}>Refund Policy</Link></p>

@@ -32,7 +32,7 @@ export default function Footer() {
             <a href="https://t.me/sharifhasaan" target="_blank" rel="noopener noreferrer">
               💬 Telegram Chat
             </a>
-            <a href="mailto:adminglobalemailhub@gmail.com">📧 adminglobalemailhub@gmail.com</a>
+            <a href="mailto:globalemailhub@gmail.com">📧 globalemailhub@gmail.com</a>
             <a href="tel:+8801733942373">📞 +8801733942373</a>
           </div>
           <div className="footer-col">
