@@ -62,9 +62,9 @@ export default function Login() {
           <hr className="login-about-divider" />
           <p className="login-about-heading">What is GlobalEmail Hub?</p>
           <ul className="login-about-list">
-            <li>📧 Buy aged Gmail &amp; Yahoo accounts</li>
-            <li>✅ 2FA enabled · Instant delivery</li>
-            <li>🔒 Trusted by thousands of buyers worldwide</li>
+            <li><span className="about-icon">📧</span> Buy aged Gmail &amp; Yahoo accounts</li>
+            <li><span className="about-icon">✅</span> 2FA enabled · Instant delivery</li>
+            <li><span className="about-icon">🔒</span> Trusted by thousands of buyers worldwide</li>
           </ul>
         </div>
       </div>
