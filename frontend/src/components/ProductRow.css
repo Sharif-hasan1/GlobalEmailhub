@@ -93,6 +93,7 @@
   line-height: 1.55;
   display: -webkit-box;
   -webkit-line-clamp: 2;
+  line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
   margin-bottom: 6px;
@@ -211,9 +212,10 @@
   color: var(--text-primary);
   outline: none;
   -moz-appearance: textfield;
+  appearance: textfield;
 }
 .qty-input::-webkit-outer-spin-button,
-.qty-input::-webkit-inner-spin-button { -webkit-appearance: none; }
+.qty-input::-webkit-inner-spin-button { -webkit-appearance: none; appearance: none; }
 
 /* Buy button */
 .pr-buy-btn {
@@ -354,6 +356,6 @@
 @media (max-width: 600px) {
   .product-row { padding: 14px 16px; }
   .pr-meta { flex-wrap: wrap; gap: 12px; }
-  .pr-desc { -webkit-line-clamp: 3; }
+  .pr-desc { -webkit-line-clamp: 3; line-clamp: 3; }
   .pr-actions { flex-direction: row; min-width: unset; }
 }
