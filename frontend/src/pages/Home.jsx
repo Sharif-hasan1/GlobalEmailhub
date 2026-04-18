@@ -32,11 +32,6 @@ export default function Home() {
               <Link to="/products" className="btn btn-primary btn-lg btn-rounded">
                 Browse Products →
               </Link>
-              {!user && (
-                <Link to="/register" className="btn btn-secondary btn-lg btn-rounded">
-                  Create Account
-                </Link>
-              )}
             </div>
             <div className="hero-stats">
               <div className="hero-stat">

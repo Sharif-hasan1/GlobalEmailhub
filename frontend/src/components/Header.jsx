@@ -63,7 +63,6 @@ export default function Header() {
           ) : (
             <div className="auth-btns">
               <Link to="/login" className="btn btn-secondary btn-sm">Login</Link>
-              <Link to="/register" className="btn btn-primary btn-sm">Register</Link>
             </div>
           )}
 
@@ -93,7 +92,6 @@ export default function Header() {
           ) : (
             <div className="mobile-auth">
               <Link to="/login" className="btn btn-secondary btn-sm" onClick={() => setMenuOpen(false)}>Login</Link>
-              <Link to="/register" className="btn btn-primary btn-sm" onClick={() => setMenuOpen(false)}>Register</Link>
             </div>
           )}
         </div>
