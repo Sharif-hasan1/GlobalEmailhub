@@ -279,3 +279,27 @@
 @media (max-width: 480px) {
   .auth-btns .btn-secondary { display: none; }
 }
+
+/* Telegram nav button */
+.nav-telegram-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: var(--radius-full);
+  color: #229ED9;
+  background: none;
+  border: 1.5px solid transparent;
+  text-decoration: none;
+  transition: background 0.2s, border-color 0.2s, transform 0.15s;
+  flex-shrink: 0;
+}
+
+.nav-telegram-btn:hover {
+  background: #e8f4fb;
+  border-color: #229ED9;
+  transform: scale(1.08);
+  text-decoration: none;
+  color: #1a8cbe;
+}
