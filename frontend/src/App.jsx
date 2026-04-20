@@ -19,6 +19,7 @@ import PrivacyPolicy from './pages/PrivacyPolicy';
 import RefundPolicy from './pages/RefundPolicy';
 import ForgotPassword from './pages/ForgotPassword';
 import ResetPassword from './pages/ResetPassword';
+import NotFound from './pages/NotFound';
 import './App.css';
 
 function App() {
@@ -44,6 +45,7 @@ function App() {
                 <Route path="/refund-policy" element={<RefundPolicy />} />
                 <Route path="/forgot-password" element={<ForgotPassword />} />
                 <Route path="/reset-password/:token" element={<ResetPassword />} />
+                <Route path="*" element={<NotFound />} />
               </Routes>
             </main>
             <Footer />

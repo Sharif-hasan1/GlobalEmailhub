@@ -8,6 +8,13 @@ export default function Home() {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
 
+  const sortedProducts = [...products].sort((a, b) => {
+    if (a.stock === 0 && b.stock !== 0) return 1;
+    if (a.stock !== 0 && b.stock === 0) return -1;
+    return b.stock - a.stock;
+  });
+  const hotProductId = sortedProducts.find(p => p.stock > 0)?._id;
+
   useEffect(() => {
     axios.get('/api/products?featured=true')
       .then(res => setProducts(res.data.slice(0, 5)))
@@ -25,7 +32,7 @@ export default function Home() {
               <span className="badge badge-blue">🔐 Verified Accounts</span>
             </div>
             <h1>Buy Aged &amp; Temporary<br />Email Accounts</h1>
-            <p>Premium Gmail, Outlook, and Yahoo accounts. Verified stock, instant delivery, and 2FA included. Trusted by thousands of buyers.</p>
+            <p>The most trusted marketplace to buy aged Gmail accounts, Outlook accounts, and Yahoo email accounts. All accounts come with 2FA enabled, instant delivery, and verified stock.</p>
             <div className="hero-actions">
               <Link to="/products" className="btn btn-primary btn-lg btn-rounded">
                 Browse Products →
@@ -34,17 +41,22 @@ export default function Home() {
             <div className="hero-stats">
               <div className="hero-stat">
                 <strong>1,000+</strong>
-                <span>Accounts in Stock</span>
+                <span>Accounts Available</span>
               </div>
               <div className="hero-stat-divider" />
               <div className="hero-stat">
-                <strong>7 Providers</strong>
-                <span>Gmail, Outlook, Yahoo…</span>
+                <strong>3 Providers</strong>
+                <span>Gmail, Outlook, Yahoo</span>
               </div>
               <div className="hero-stat-divider" />
               <div className="hero-stat">
                 <strong>Instant</strong>
                 <span>Delivery</span>
+              </div>
+              <div className="hero-stat-divider" />
+              <div className="hero-stat">
+                <strong>24/7</strong>
+                <span>Support</span>
               </div>
             </div>
           </div>
@@ -108,7 +120,13 @@ export default function Home() {
                 <p>Check back soon for new stock.</p>
               </div>
             ) : (
-              products.map(p => <ProductRow key={p._id} product={p} />)
+              sortedProducts.map(p => (
+                <ProductRow
+                  key={p._id}
+                  product={p}
+                  isHot={p._id === hotProductId}
+                />
+              ))
             )}
           </div>
 
@@ -120,14 +138,43 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Why Buy */}
+      <section className="why-buy-section">
+        <div className="container">
+          <div className="section-header why-buy-header">
+            <div>
+              <h2>Why Buy Aged Email Accounts From Us?</h2>
+              <p>Trusted by thousands of buyers worldwide</p>
+            </div>
+          </div>
+          <div className="why-buy-grid">
+            <div className="why-buy-card">
+              <span className="why-buy-icon">🛡️</span>
+              <h3>100% Verified Accounts</h3>
+              <p>Every Gmail, Outlook and Yahoo account is manually tested before being listed</p>
+            </div>
+            <div className="why-buy-card">
+              <span className="why-buy-icon">💰</span>
+              <h3>Bulk Discounts Available</h3>
+              <p>Save more when you buy in volume — flexible pricing tiers for resellers and bulk buyers</p>
+            </div>
+            <div className="why-buy-card">
+              <span className="why-buy-icon">🎧</span>
+              <h3>24/7 Customer Support</h3>
+              <p>Our team is available around the clock via Telegram to assist with your order</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Features */}
       <section className="features-strip">
         <div className="container features-grid">
           {[
-            { icon: '⚡', title: 'Instant Delivery', desc: 'Orders processed immediately after payment.' },
-            { icon: '🔒', title: '2FA Included', desc: 'All accounts include two-factor auth & backup codes.' },
-            { icon: '🌍', title: 'Global IPs', desc: 'Accounts registered from diverse international IPs.' },
-            { icon: '✅', title: 'Verified Stock', desc: 'Every account tested and verified before listing.' }
+            { icon: '⚡', title: 'Instant Delivery', desc: 'Buy aged Gmail accounts and get instant automated delivery.' },
+            { icon: '🔒', title: '2FA Included', desc: 'All aged email accounts include two-factor authentication & backup codes.' },
+            { icon: '🌍', title: 'Global IPs', desc: 'Email accounts registered from diverse international IPs worldwide.' },
+            { icon: '✅', title: 'Verified Stock', desc: 'Every aged email account tested and verified before listing on our marketplace.' }
           ].map(f => (
             <div className="feature-card" key={f.title}>
               <span className="feature-icon">{f.icon}</span>

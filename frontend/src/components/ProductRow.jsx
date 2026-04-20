@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useCart } from '../context/CartContext';
 import './ProductRow.css';
 
-export default function ProductRow({ product }) {
+export default function ProductRow({ product, isHot = false }) {
   const { addToCart } = useCart();
   const [showModal, setShowModal] = useState(false);
   const [qty, setQty] = useState(1);
@@ -32,7 +32,10 @@ export default function ProductRow({ product }) {
           <ProviderIcon icon={product.icon} provider={product.provider} />
         </div>
         <div className="pr-text">
-          <h3 className="pr-title">{product.title}</h3>
+          <h3 className="pr-title">
+            {product.title}
+            {isHot && <span className="hot-badge">🔥 HOT</span>}
+          </h3>
           <p className="pr-desc">{product.description}</p>
           <span className="pr-category badge badge-blue">{product.category}</span>
         </div>
@@ -42,12 +45,20 @@ export default function ProductRow({ product }) {
       <div className="pr-meta">
         {/* Stock */}
         <div className="pr-stock">
-          <span className={`stock-label${isOutOfStock ? ' empty' : product.stock < 20 ? ' low' : ''}`}>
-            {isOutOfStock ? 'Out of stock' : `${product.stock.toLocaleString()} pcs.`}
+          <span className="stock-count">
+            {isOutOfStock ? '—' : `${product.stock.toLocaleString()} pcs.`}
           </span>
-          {!isOutOfStock && product.stock < 20 && (
-            <span className="stock-warning">Low stock</span>
-          )}
+          <span className={`stock-badge ${
+            isOutOfStock ? 'stock-sold-out'
+            : product.stock > 200 ? 'stock-in-stock'
+            : product.stock >= 70 ? 'stock-available'
+            : 'stock-low'
+          }`}>
+            {isOutOfStock ? 'SOLD OUT'
+              : product.stock > 200 ? 'IN STOCK'
+              : product.stock >= 70 ? 'AVAILABLE'
+              : 'LOW STOCK'}
+          </span>
         </div>
 
         {/* Price */}

@@ -36,7 +36,7 @@ router.post('/register', async (req, res) => {
     await user.save();
 
     const payload = { user: { id: user.id, role: user.role } };
-    const token = jwt.sign(payload, process.env.JWT_SECRET || 'mailstocksecret', { expiresIn: '7d' });
+    const token = jwt.sign(payload, process.env.JWT_SECRET, { expiresIn: '7d' });
 
     res.status(201).json({
       token,
@@ -90,7 +90,7 @@ router.post('/login', rateLimiter, async (req, res) => {
     });
 
     const payload = { user: { id: user.id, role: user.role } };
-    const token = jwt.sign(payload, process.env.JWT_SECRET || 'mailstocksecret', { expiresIn: '7d' });
+    const token = jwt.sign(payload, process.env.JWT_SECRET, { expiresIn: '7d' });
 
     await logActivity(req, `User logged in: ${user.username}`, 'auth');
 
@@ -176,7 +176,7 @@ router.post('/github', async (req, res) => {
     }
 
     const tokenPayload = { user: { id: user.id, role: user.role } };
-    const token = jwt.sign(tokenPayload, process.env.JWT_SECRET || 'mailstocksecret', { expiresIn: '7d' });
+    const token = jwt.sign(tokenPayload, process.env.JWT_SECRET, { expiresIn: '7d' });
 
     await logActivity(req, `GitHub login: ${user.username}`, 'auth');
 
@@ -245,7 +245,7 @@ router.post('/google', async (req, res) => {
     }
 
     const tokenPayload = { user: { id: user.id, role: user.role } };
-    const token = jwt.sign(tokenPayload, process.env.JWT_SECRET || 'mailstocksecret', { expiresIn: '7d' });
+    const token = jwt.sign(tokenPayload, process.env.JWT_SECRET, { expiresIn: '7d' });
 
     await logActivity(req, `Google login: ${user.username}`, 'auth');
 

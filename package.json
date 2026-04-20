@@ -2,6 +2,9 @@
   "name": "globalemailhub",
   "version": "1.0.0",
   "description": "GlobalEmail Hub - Digital marketplace for temporary and aged email accounts",
+  "engines": {
+    "node": ">=18.0.0"
+  },
   "scripts": {
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "server": "cd backend && npm run dev",
