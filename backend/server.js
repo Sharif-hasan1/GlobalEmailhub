@@ -35,7 +35,8 @@ app.set('trust proxy', 1);
 // Security headers via Helmet
 app.use(helmet({
   contentSecurityPolicy: false,
-  crossOriginEmbedderPolicy: false
+  crossOriginEmbedderPolicy: false,
+  crossOriginOpenerPolicy: false   // required for Google Sign-In popup
 }));
 
 const allowedOrigins = process.env.CORS_ORIGIN
