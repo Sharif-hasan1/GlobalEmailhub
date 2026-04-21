@@ -68,7 +68,7 @@ export default function Header() {
 
           {/* Telegram */}
           <a
-            href="https://t.me/sharifhasaan"
+            href="https://t.me/globalgmailhub"
             target="_blank"
             rel="noopener noreferrer"
             className="nav-telegram-btn"

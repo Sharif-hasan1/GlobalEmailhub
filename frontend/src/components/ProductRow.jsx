@@ -130,7 +130,7 @@ export default function ProductRow({ product, isHot = false }) {
 
             <p className="buy-modal-contact-hint">Need help with your order?</p>
             <a
-              href="https://t.me/sharifhasaan"
+              href="https://t.me/globalgmailhub"
               target="_blank"
               rel="noopener noreferrer"
               className="buy-modal-telegram"

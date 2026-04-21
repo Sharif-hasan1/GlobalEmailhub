@@ -68,7 +68,7 @@ export default function Support() {
                   <p>Get instant help directly from us — fastest response.</p>
                 </div>
                 <a
-                  href="https://t.me/sharifhasaan"
+                  href="https://t.me/globalgmailhub"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn btn-primary btn-rounded"
@@ -96,11 +96,11 @@ export default function Support() {
                     <span>+8801733942373</span>
                   </div>
                 </a>
-                <a href="https://t.me/sharifhasaan" target="_blank" rel="noopener noreferrer" className="contact-info-item">
+                <a href="https://t.me/globalgmailhub" target="_blank" rel="noopener noreferrer" className="contact-info-item">
                   <span className="contact-info-icon">💬</span>
                   <div>
                     <strong>Telegram</strong>
-                    <span>@sharifhasaan</span>
+                    <span>@globalgmailhub</span>
                   </div>
                 </a>
               </div>

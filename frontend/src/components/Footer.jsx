@@ -29,7 +29,7 @@ export default function Footer() {
             <h4>Support</h4>
             <Link to="/support">Contact Us</Link>
             <Link to="/support">FAQ</Link>
-            <a href="https://t.me/sharifhasaan" target="_blank" rel="noopener noreferrer">
+            <a href="https://t.me/globalgmailhub" target="_blank" rel="noopener noreferrer">
               💬 Telegram Chat
             </a>
             <a href="mailto:globalemailhub@gmail.com">📧 globalemailhub@gmail.com</a>
