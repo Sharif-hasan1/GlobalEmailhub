@@ -89,11 +89,11 @@ export default function Support() {
                     <span>globalemailhub@gmail.com</span>
                   </div>
                 </a>
-                <a href="tel:+8801733942373" className="contact-info-item">
+                <a href="tel:+8809638320090" className="contact-info-item" rel="noopener noreferrer">
                   <span className="contact-info-icon">📞</span>
                   <div>
                     <strong>Phone / WhatsApp</strong>
-                    <span>+8801733942373</span>
+                    <span>+880 9638320090</span>
                   </div>
                 </a>
                 <a href="https://t.me/globalgmailhub" target="_blank" rel="noopener noreferrer" className="contact-info-item">

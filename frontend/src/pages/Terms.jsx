@@ -111,7 +111,7 @@ export default function Terms() {
         <h3>Get in Touch</h3>
         <p>📧 <a href="mailto:globalemailhub@gmail.com">globalemailhub@gmail.com</a></p>
         <p>💬 <a href="https://t.me/globalgmailhub" target="_blank" rel="noopener noreferrer">Telegram: @globalgmailhub</a></p>
-        <p>📞 <a href="tel:+8801733942373">+8801733942373</a></p>
+        <p>📞 <a href="tel:+8809638320090" rel="noopener noreferrer">+880 9638320090</a></p>
         <p style={{ marginTop: 12 }}>Also see: <Link to="/privacy-policy" style={{ color: '#60a5fa' }}>Privacy Policy</Link> · <Link to="/refund-policy" style={{ color: '#60a5fa' }}>Refund Policy</Link></p>
       </div>
     </div>
